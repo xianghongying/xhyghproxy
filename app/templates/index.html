@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub 加速代理服务</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span>Git Hub Proxy</span>
+            </div>
+            <div class="nav">
+                <a href="#about" class="nav-item">关于</a>
+                <a href="http://www.linuxsb.com" class="nav-item" target="_blank" rel="noopener">个人博客
+                </a>
+            </div>
+        </div>
+
+        <div class="main-card">
+            <h1 class="title">GitHub 资源加速服务</h1>
+            <p class="subtitle">输入 GitHub 资源链接开始加速下载</p>
+            
+            <div class="search-box">
+                <form id="accelerateForm" onsubmit="handleSubmit(event)">
+                    <div class="input-group">
+                        <input type="text" 
+                               id="githubUrl" 
+                               placeholder="例如: https://github.com/kubeedge/releases/.../test.tar.gz"
+                               autocomplete="off"
+                               autocapitalize="off">
+                        <button type="submit" class="accelerate-btn">
+                            <i class="fas fa-bolt"></i> 加速下载
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>安全加密</h3>
+                    <p>TLS 1.3加密传输，保障数据安全</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>极速体验</h3>
+                    <p>全球CDN节点，速度提升300%</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-infinity"></i>
+                    <h3>无限流量</h3>
+                    <p>无流量限制，畅快下载</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>使用示例</h2>
+            
+            <div class="example-section">
+                <h3>合法输入：</h3>
+                <pre class="example-code"><code>
+分支源码：https://github.com/hunshcn/project/archive/master.zip
+release源码：https://github.com/hunshcn/project/archive/v0.1.0.tar.gz
+release文件：https://github.com/hunshcn/project/releases/download/v0.1.0/example.zip
+分支文件：https://github.com/hunshcn/project/blob/master/filename</code></pre>
+            </div>
+        
+            <div class="example-section">
+                <h3>示例参考：</h3>
+                <pre class="example-code"><code>
+源github url: https://github.com/kubeedge/kubeedge/releases/download/v1.20.0/kubeedge-v1.20.0-linux-amd64.tar.gz
+加速 url: http://gh.linuxsb.com/https://github.com/kubeedge/kubeedge/releases/download/v1.20.0/kubeedge-v1.20.0-linux-amd64.tar.gz</code></pre>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+
