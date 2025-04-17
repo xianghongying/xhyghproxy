@@ -4,7 +4,7 @@
 + Docker部署  
 
 ```shell
-docker run -d --name="gh-proxy-py" \
+docker run -d --name="xhyghproxy" \
   -p 0.0.0.0:80:80 \
   --restart=always \
   x120952576/xhyghproxy:v1
