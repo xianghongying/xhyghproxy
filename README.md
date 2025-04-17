@@ -15,7 +15,7 @@ docker run -d --name="xhyghproxy" \
 ```shell
 cat > docker-compose.yaml <<EOF
 services:
-  gh-proxy:
+  xhyghproxy:
     restart: always
     image: x120952576/xhyghproxy:v1
     ports:
