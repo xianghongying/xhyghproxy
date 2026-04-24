@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  xhyghproxy:
+    build: .
+    container_name: xhyghproxy
+    restart: always
+    ports:
+      - "8001:80"
+    environment:
+      - TZ=Asia/Shanghai
+      - FLASK_DEBUG=false
+      - JSDELIVR_ENABLE=1
+      - PREFERRED_CDN=jsdelivr
+      - REQUEST_TIMEOUT=30
+      - RATE_LIMIT=200 per minute
+      - RATE_LIMIT_ENABLE=true
+      - SIZE_LIMIT=107374182400
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - ghproxy-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  ghproxy-network:
+    driver: bridge

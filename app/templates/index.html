@@ -40,6 +40,16 @@
                         </button>
                     </div>
                 </form>
+                
+                <div id="resultBox" class="result-box" style="display: none;">
+                    <div class="result-label">加速链接：</div>
+                    <div class="result-content">
+                        <input type="text" id="resultUrl" readonly>
+                        <button class="copy-btn" onclick="copyToClipboard()">
+                            <i class="fas fa-copy"></i> 复制
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <div class="feature-cards">
@@ -57,6 +67,11 @@
                     <i class="fas fa-infinity"></i>
                     <h3>无限流量</h3>
                     <p>无流量限制，畅快下载</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-server"></i>
+                    <h3>多CDN支持</h3>
+                    <p>智能路由，自动选择最优节点</p>
                 </div>
             </div>
         </div>
@@ -83,6 +98,11 @@ release文件：https://github.com/hunshcn/project/releases/download/v0.1.0/exam
 
     </div>
 
+    <script>
+        window.appConfig = {
+            baseUrl: window.location.origin
+        };
+    </script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
