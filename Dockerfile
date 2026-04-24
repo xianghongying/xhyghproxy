@@ -1,4 +1,4 @@
-FROM tiangolo/uwsgi-nginx:python3.12
+FROM docker.1ms.run/tiangolo/uwsgi-nginx:python3.12
 
 LABEL maintainer="xianghy <xhy@itzgr.cn>"
 
@@ -18,7 +18,8 @@ ENV PYTHONPATH=/app
 ENV FLASK_DEBUG=false
 ENV JSDELIVR_ENABLE=0
 ENV LISTEN_HOST=0.0.0.0
-ENV LISTEN_PORT=80
+ENV FLASK_PORT=80
+ENV NGINX_LISTEN_PORT=80
 ENV REQUEST_TIMEOUT=30
 ENV RATE_LIMIT="200 per minute"
 ENV RATE_LIMIT_ENABLE=true

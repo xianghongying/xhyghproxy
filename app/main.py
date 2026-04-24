@@ -48,7 +48,7 @@ pass_list_str = os.environ.get('PASS_LIST', '''
 ''')
 
 HOST = os.environ.get('LISTEN_HOST', '0.0.0.0')  # 监听地址
-PORT = int(os.environ.get('LISTEN_PORT', '80'))  # 监听端口
+PORT = int(os.environ.get('FLASK_PORT', '80'))  # Flask监听端口
 DEBUG = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'  # Debug模式
 
 # CDN源配置 - 支持多个CDN

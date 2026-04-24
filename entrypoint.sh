@@ -4,7 +4,7 @@ set -e
 /uwsgi-nginx-entrypoint.sh
 
 # Get the listen port for Nginx, default to 80
-USE_LISTEN_PORT=${LISTEN_PORT:-80}
+USE_LISTEN_PORT=${NGINX_LISTEN_PORT:-80}
 
 if [ -f /app/nginx.conf ]; then
     cp /app/nginx.conf /etc/nginx/nginx.conf
